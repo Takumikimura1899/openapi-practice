@@ -4,6 +4,10 @@ info:
   title: 'Sample API'
   version: '1.0.0'
 
+servers: []
+
+tags: []
+
 paths:
   /message:
     get:
@@ -17,6 +21,8 @@ paths:
               schema:
                 type: string
                 example: 'Hello World'
+
+security: []
 
 components:
   schemas:
