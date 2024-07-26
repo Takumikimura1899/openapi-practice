@@ -2,6 +2,18 @@ openapi: '3.0.3'
 
 info:
   title: 'Sample API'
+  description: |
+    # Features
+    - Get reviews
+    - Post review
+  termsOfService: 'https://tastylog.com/terms'
+  contact:
+    name: 'Customer Support'
+    url: 'https://tastylog.com/support/'
+    email: 'support-desk@tastylog.com'
+  license:
+    name: 'MIT License'
+    url: 'https://opensource.org/licenses/MIT'
   version: '1.0.0'
 
 servers: []
