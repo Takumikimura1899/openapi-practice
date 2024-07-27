@@ -16,7 +16,19 @@ info:
     url: 'https://opensource.org/licenses/MIT'
   version: '1.0.0'
 
-servers: []
+servers:
+  - url: 'http://localhost:{port}'
+    description: 'Local development'
+    variables:
+      port:
+        enum: ['3000', '8080']
+        default: '3000'
+  - url: 'https://it1.tastylog.com'
+    description: 'Integration Test'
+  - url: 'https://stg.tastylog.com'
+    description: 'Staging'
+  - url: 'https://api.tastylog.com'
+    description: 'Production'
 
 tags: []
 
