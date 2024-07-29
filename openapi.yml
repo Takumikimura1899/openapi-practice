@@ -30,7 +30,9 @@ servers:
   - url: 'https://api.tastylog.com'
     description: 'Production'
 
-tags: []
+tags:
+  - name: reviews
+    description: 'Shop review operation'
 
 paths:
   /message:
@@ -46,27 +48,23 @@ paths:
                 type: string
                 example: 'Hello World'
   /shops/{shopId}/reviews:
+    parameters:
+      - name: shopId
+        in: path
+        required: true
+        schema: { type: string }
     get:
       summary: 'Get specified shop reviews'
       description: '(description): Get specified shop reviews'
-      tags: ['shops']
+      tags: ['reviews']
       deprecated: false
-      parameters:
-        - name: shopId
-          in: path
-          required: true
-          schema: { type: string }
       responses:
         '200':
           description: 'Success operation'
     post:
       summary: 'Create review'
+      tags: ['reviews']
       parameters:
-        - name: shopId
-          in: path
-          required: true
-          schema: { type: string }
-          example: 'sample'
         - name: 'X-Api-Key'
           in: header
           description: "Request user's identifier"
