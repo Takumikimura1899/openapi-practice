@@ -92,6 +92,8 @@ paths:
               schema: { type: string, format: url }
         '400':
           $ref: '#/components/responses/400-BadRequest'
+      security:
+        - apikey_auth: []
 
 security: []
 
@@ -132,3 +134,9 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/ClientError'
+  securitySchemes:
+    apikey_auth:
+      description: 'API Key authorization'
+      type: apiKey
+      in: header
+      name: 'X-Api-Key'
